@@ -54,6 +54,23 @@ RSpec.describe 'When I visit the doctors show page' do
             expect(page).to have_content("Patient: #{@grace.name}")
             expect(page).to_not have_content("Patient: #{@leo.name}")
         end
+        
+        it 'Next to each patients name, I see a button to remove that patient from that doctors caseload' do
+            visit doctor_path(@greg)
 
+            expect(page).to have_button("Remove Grace")
+            expect(page).to have_button("Remove Mary")
+            expect(page).to_not have_button("Remove Leo")
+        end
+
+        it 'When I click that button for one patient, Im brought back to the Doctors show page And I no longer see that patients name listed' do
+            visit doctor_path(@greg)
+
+            click_button "Remove Grace"
+            expect(current_path).to eq(doctor_path(@greg))
+
+            expect(page).to_not have_content("Patient: #{@grace.name}")
+            expect(page).to have_content("Patient: #{@mary.name}")
+        end
     end
 end
