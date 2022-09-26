@@ -56,3 +56,4 @@ RSpec.describe 'When I visit the doctors show page' do
         end
 
     end
+end
