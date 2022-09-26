@@ -10,7 +10,7 @@ RSpec.describe 'When I visit the doctors show page' do
         @mark = @denver.doctors.create!(name: 'Mark', specialty: 'Cardiology', university: 'CU')
 
         @mary = Patient.create!(name: 'Mary', age: 29)
-        @grace = Patient.create!(name: 'Grace', age: 23)
+        @grace = Patient.create!(name: 'Grace', age: 17)
         @leo = Patient.create!(name: 'Leo', age: 42)
 
         DoctorPatient.create!(doctor_id: @greg.id, patient_id: @mary.id)
