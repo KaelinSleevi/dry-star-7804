@@ -7,5 +7,5 @@
 <p>Hospital: <%= @hospital.name %></p>
 
 <% @doctor.patients.each do |patient|%>
-    <p>Patient: <%= patient.name %></p>
+    <p>Patient: <%= patient.name %> <%= button_to "Remove Patient: #{patient.name}", doctor_path(@doctor), method: :delete%></p> 
 <% end %>
