@@ -32,7 +32,7 @@ RSpec.describe 'When I visit the hospitals show page' do
         expect(page).to_not have_content(" Doctors: #{@mark.name}")
     end
 
-    it 'And next to each doctor I see the number of patients associated with the doctor' do
+    xit 'And next to each doctor I see the number of patients associated with the doctor' do
         visit hospital_path(@aurora)
 
         expect(page).to have_content("Patients:")
